@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Consultix University ERP - Design System
+   Navy Blue & Gold Professional University Theme
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Navy Blue & Gold */
+    --background: 210 20% 98%;
+    --foreground: 215 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 60% 15%;
+
+    /* Primary - Deep Navy Blue */
+    --primary: 215 60% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Golden Yellow */
+    --secondary: 42 92% 56%;
+    --secondary-foreground: 215 60% 15%;
+
+    /* Muted - Soft Gray Blue */
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 20% 45%;
+
+    /* Accent - Light Navy */
+    --accent: 215 45% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 215 60% 23%;
+
+    --radius: 0.5rem;
+
+    /* Extended Palette */
+    --navy-dark: 215 65% 18%;
+    --navy-light: 215 40% 45%;
+    --gold: 42 92% 56%;
+    --gold-light: 42 90% 70%;
+    --gold-dark: 42 85% 42%;
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --info: 200 90% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 215 60% 23%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 42 92% 56%;
+    --sidebar-primary-foreground: 215 60% 15%;
+    --sidebar-accent: 215 50% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 50% 30%;
+    --sidebar-ring: 42 92% 56%;
+
+    /* Gradients */
+    --gradient-navy: linear-gradient(135deg, hsl(215 65% 18%) 0%, hsl(215 60% 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 85% 42%) 0%, hsl(42 92% 60%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 60% 23%) 0%, hsl(215 45% 35%) 50%, hsl(200 60% 45%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 60% 23% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 60% 23% / 0.1), 0 2px 4px -2px hsl(215 60% 23% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(215 60% 23% / 0.1), 0 4px 6px -4px hsl(215 60% 23% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(215 60% 23% / 0.15), 0 8px 10px -6px hsl(215 60% 23% / 0.1);
+    --shadow-gold: 0 4px 14px 0 hsl(42 92% 56% / 0.4);
+  }
+
+  .dark {
+    --background: 215 60% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 55% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 55% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 42 92% 56%;
+    --primary-foreground: 215 60% 15%;
+
+    --secondary: 215 45% 25%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 215 50% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 45% 25%;
+    --accent-foreground: 210 20% 95%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 215 45% 20%;
+    --input: 215 45% 20%;
+    --ring: 42 92% 56%;
+
+    --sidebar-background: 215 60% 10%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 42 92% 56%;
+    --sidebar-primary-foreground: 215 60% 15%;
+    --sidebar-accent: 215 50% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 50% 18%;
+    --sidebar-ring: 42 92% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero-primary {
+    @apply bg-secondary text-secondary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .btn-hero-primary:hover {
+    @apply scale-105;
+    box-shadow: 0 6px 20px 0 hsl(42 92% 56% / 0.5);
+  }
+
+  .btn-hero-outline {
+    @apply bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .btn-hero-outline:hover {
+    @apply bg-white text-primary;
+  }
+
+  /* Card Variants */
+  .card-elevated {
+    @apply bg-card rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-elevated:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply relative bg-card rounded-xl overflow-hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-card-overlay {
+    @apply absolute bottom-0 left-0 right-0 bg-primary text-primary-foreground py-3 px-4 font-semibold text-center;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-2 bg-muted rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full rounded-full transition-all duration-500;
+    background: var(--gradient-gold);
+  }
+
+  /* Sidebar Item */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-sidebar-foreground;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-sidebar-accent;
+  }
+
+  .sidebar-item.active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground;
+  }
+
+  /* Badge Styles */
+  .badge-success {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    background: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground;
+  }
+
+  /* Announcement Bar */
+  .announcement-bar {
+    @apply w-full py-2 text-center text-sm font-medium text-primary-foreground;
+    background: var(--gradient-navy);
+  }
+
+  /* Stats Card */
+  .stats-card {
+    @apply p-6 rounded-xl text-center;
+    background: var(--gradient-hero);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+}
