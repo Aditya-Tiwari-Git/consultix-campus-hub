@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-import heroStudent from '@/assets/hero-student.jpg';
+import heroStudent from '@/assets/college-image.jpg';
 import { Award, Users, BookOpen, Trophy } from 'lucide-react';
 
 const HeroSection = () => {
@@ -32,9 +32,9 @@ const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              India's <span className="bg-secondary text-secondary-foreground px-3 py-1">No. #1</span>
+              India's Most
               <br />
-              Online University
+              Trusted University
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
